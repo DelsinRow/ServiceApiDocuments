@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: storageservice
+spec:
+  selector:
+    app: storageservice
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storageservice-deployment
+  labels:
+    app: storageservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: storageservice
+  template:
+    metadata:
+      labels:
+        app: storageservice
+    spec:
+      containers:
+      - name: storageservice
+        image: myapp-image:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: myapp-config

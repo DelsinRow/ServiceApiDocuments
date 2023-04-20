@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hastebin-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-container      
+        image: service-api
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SERVICE
+          value: "hastebin"
+        - name: TOKEN
+          value: "088f9f6c0d3647bd0fc66bdecfae4f3e889c67d8f8231180c209d23549d91a1df2f2dcf780b815f3aa03a186334a959c9ef0ba6c65d8c28a53e325969f59840e"
+      restartPolicy: OnFailure
+  backoffLimit: 4
