@@ -4,7 +4,7 @@ The service downloads the first 10 questions on 10 programming languages on the 
 The obtained data is sent via POST-request to Hastebin service or self-written StorageService
 The output is a link where you can see the data in text format
 
-Step 1.Create Docker images of the necessary services. 
+**Step 1.Create Docker images of the necessary services** 
 
 Enter in the Terminal:
 
@@ -23,7 +23,7 @@ Build a MongoDB image, enter the command:
 **docker pull mongo**
 
 
-Step 2-1. Deploy in Docker
+**Step 2-1. Deploy in Docker**
 
 Enter command in Terminal from “ServiceAPI” directory:
 
@@ -42,11 +42,11 @@ StorageService:
 **docker run -e SERVICE=storage -e API_ENDPOINT_STORAGESERVICE=http://localhost -e FQDN=http://localhost**
 
 
-Step 2-2. Deploy in Kubernetes
+**Step 2-2. Deploy in Kubernetes**
 
 First of all deploy ingress nginx. Instruction here: [Link](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
 
-Go to the 'yaml-file' directory and load all the manifests from it with the Terminal-command:
+Enter the commands in Terminal from the directory with the yaml files ("Documents" repository):
 
 **kubectl apply -f 'file-name'**
 
