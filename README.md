@@ -4,6 +4,10 @@ The service downloads the first 10 questions on 10 programming languages on the 
 The obtained data is sent via POST-request to Hastebin service or self-written StorageService
 The output is a link where you can see the data in text format
 
+Needed repository:
+https://gitlab.mera.com/evsinaev/serviceapi.git
+https://gitlab.mera.com/evsinaev/storagesevice-project.git
+
 **Step 1.Create Docker images of the necessary services** 
 
 Enter in the Terminal:
