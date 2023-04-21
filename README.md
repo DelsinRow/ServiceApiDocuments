@@ -22,6 +22,7 @@ Build a MongoDB image, enter the command:
 
 **docker pull mongo**
 
+
 Step 2-1. Deploy in Docker
 
 Enter command in Terminal from “ServiceAPI” directory:
@@ -34,7 +35,7 @@ Hastebin:
 
 **docker run -e SERVICE=hastebin -e TOKEN='your-token'**
 
-You can get 'your-token' by following the instructions: [https://www.toptal.com/developers/hastebin/documentation](https://www.toptal.com/developers/hastebin/documentation)
+You can get 'your-token' by following the instructions: [Link](https://www.toptal.com/developers/hastebin/documentation)
 
 StorageService:
 
@@ -43,7 +44,7 @@ StorageService:
 
 Step 2-2. Deploy in Kubernetes
 
-First of all deploy ingress nginx. Instruction here: [link](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
+First of all deploy ingress nginx. Instruction here: [Link](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
 
 Go to the 'yaml-file' directory and load all the manifests from it with the Terminal-command:
 
@@ -67,7 +68,7 @@ or
 
 -hastebin-job.yml
 
-To work with the Hastebin service, edit the hastebin-job file. Enter your hastebin-token in the 'value' field of the TOKEN environment variable. You can get it by following the instructions: [https://www.toptal.com/developers/hastebin/documentation](https://www.toptal.com/developers/hastebin/documentation)
+To work with the Hastebin service, edit the hastebin-job file. Enter your hastebin-token in the 'value' field of the TOKEN environment variable. You can get it by following the instructions: [Link](https://www.toptal.com/developers/hastebin/documentation)
 
 To get the desired link, enter the command
 
