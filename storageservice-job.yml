@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: storageservice-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-container
+        image: service-api
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SERVICE
+          value: "storage"
+        - name: API_ENDPOINT_STORAGESERVICE
+          value: "http://storageservice"
+        - name: FQDN
+          value: "http://localhost"
+      restartPolicy: OnFailure
+  backoffLimit: 4
