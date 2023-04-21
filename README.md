@@ -8,15 +8,15 @@ Step 1.Create Docker images of the necessary services.
 
 Enter in the Terminal:
 
-**docker build -t storageservice-image <repository>**
+**docker build -t storageservice-image 'repository'**
 
-**docker build -t service-api <repository>**
+**docker build -t service-api 'repository'**
 
-where **<repository>** - PATH to the repository with Dockerfile
+where **'repository'** - PATH to the repository with Dockerfile
 
 Or go to the repository with the Dockerfile and enter:
 
-**docker build -t <image_name> .**
+**docker build -t 'image_name' .**
 
 Build a MongoDB image, enter the command:
 
@@ -32,23 +32,22 @@ Use the command to output the link to the corresponding service
 
 Hastebin:
 
-**docker run -e SERVICE=hastebin -e TOKEN=<your-token>**
+**docker run -e SERVICE=hastebin -e TOKEN='your-token'**
 
-You can get <your-token> by following the instructions: [https://www.toptal.com/developers/hastebin/documentation](https://www.toptal.com/developers/hastebin/documentation)
+You can get 'your-token' by following the instructions: [https://www.toptal.com/developers/hastebin/documentation](https://www.toptal.com/developers/hastebin/documentation)
 
 StorageService:
 
 **docker run -e SERVICE=storage -e API_ENDPOINT_STORAGESERVICE=http://localhost -e FQDN=http://localhost**
 
-⇒Команды для запуска serviceAPI с разными переменными окружения
 
 Step 2-2. Deploy in Kubernetes
 
-First of all deploy ingress nginx. Instruction here: [https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
+First of all deploy ingress nginx. Instruction here: [link](https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop)
 
 Go to the 'yaml-file' directory and load all the manifests from it with the Terminal-command:
 
-**kubectl apply -f <file-name>**
+**kubectl apply -f 'file-name'**
 
 Unload the manifests in this order:
 
@@ -74,6 +73,6 @@ To get the desired link, enter the command
 
 **kubectl get pods**
 
-Find the Pod of Job, you ran earlier. Copy its <pod-name>. Enter next command:
+Find the Pod of Job, you ran earlier. Copy its 'pod-name'. Enter next command:
 
-**kubectl logs <pod-name>**
+**kubectl logs 'pod-name'**
