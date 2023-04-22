@@ -63,8 +63,9 @@ Unload the manifests in this order:
 -storageservice.yml
 
 Enter command:
+**kubectl create configmap myapp-config --from-file=application.yml**
 
-**kubectl create ingress httpbin-ingress-rule --class=nginx --rule="localhost/*=storageservice:8080”**
+**kubectl create ingress storageservice-ingress-rule --class=nginx --rule="localhost/*=storageservice:8080”**
 
 Unload one of the manifests(optionally):
 
