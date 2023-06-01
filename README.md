@@ -5,8 +5,12 @@ The obtained data is sent via POST-request to Hastebin service or self-written S
 The output is a link where you can see the data in text format
 
 Needed repository:
+
 [ServiceAPI repository](https://gitlab.mera.com/evsinaev/serviceapi.git)
+
 [StorageService repository](https://gitlab.mera.com/evsinaev/storagesevice-project.git)
+
+[Documents repository](https://gitlab.mera.com/evsinaev/documents.git)
 
 ## Step 1.Create Docker images of the necessary services
 
@@ -36,7 +40,7 @@ docker pull mongo
 
 ## Step 2-1. Deploy in Docker
 
-Enter command in Terminal from “ServiceAPI” directory:
+Enter command in Terminal from “storage-srvice” directory:
 
 ```docker-compose up```
 
@@ -53,7 +57,7 @@ You can get 'your-token' here: [Instruction](https://www.toptal.com/developers/h
 StorageService:
 
 ```
-docker run -e SERVICE=storage -e API_ENDPOINT_STORAGESERVICE=http://localhost -e FQDN=http://localhost
+docker run -e SERVICE=storage -e STORAGESERVICE_API_ENDPOINT=http://localhost:8080
 ```
 
 ## Step 2-2. Deploy Services in Kubernetes
