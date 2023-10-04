@@ -6,11 +6,11 @@ The output is a link where you can see the data in text format
 
 Needed repository:
 
-[ServiceAPI repository](https://gitlab.mera.com/evsinaev/serviceapi.git)
+[ServiceAPI repository](https://github.com/DelsinRow/ServiceApi)
 
-[StorageService repository](https://gitlab.mera.com/evsinaev/storagesevice-project.git)
+[StorageService repository](https://github.com/DelsinRow/StorageService)
 
-[Documents repository](https://gitlab.mera.com/evsinaev/documents.git)
+[Documents repository](https://github.com/DelsinRow/ServiceApiDocuments)
 
 ## Step 1.Create Docker images of the necessary services
 
@@ -90,6 +90,8 @@ Unload one of the manifests(optionally):
 To work with the Hastebin service, edit the ```hastebin-job``` file. Enter your hastebin-token in the ```value``` field of the TOKEN environment variable. You can get token here: [Instruction](https://www.toptal.com/developers/hastebin/documentation)
 
 To get the desired link, enter the command
+
+```
 
 ```
 kubectl get pods
